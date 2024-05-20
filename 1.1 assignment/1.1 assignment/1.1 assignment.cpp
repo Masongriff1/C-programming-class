@@ -2,15 +2,25 @@
 //
 
 // comments: notes for developers, code will ignore.
+// Mason Griffith
+// This Code is in our second week
+// 05/20/2024
 
 #include <iostream>
-
+using namespace std;
 int main() // main function
 {
-    std::cout << "Hello World!\n";
-    std::cout << "Welcome to my code.\n";
-    std::cout << "My name is Mason.\n";
-
+	string firstname, lastname;
+	// string lastname;
+	int age;
+	cout << "Please enter your first name: " << endl;
+	cin >> firstname;
+	cout << "Please enter your last name: " << endl;
+	cin >> lastname;
+	cout << "Please enter your age: " << endl;
+	cin >> age;
+	cout << "Your first name is: " << firstname<< " and your last name is: " << lastname << endl;
+	cout << "Your age is: " << age << endl;
 
 }
 
