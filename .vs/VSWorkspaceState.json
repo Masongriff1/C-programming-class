@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\1.1 assignment",
+    "\\1.1 assignment\\1.1 assignment",
+    "\\gamewithinput",
+    "\\gamewithinput\\gamewithinput"
   ],
+  "SelectedNode": "\\1.1 assignment\\1.1 assignment\\1.1 assignment.cpp",
   "PreviewInSolutionExplorer": false
 }
