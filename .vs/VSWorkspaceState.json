@@ -3,9 +3,11 @@
     "",
     "\\1.1 assignment",
     "\\1.1 assignment\\1.1 assignment",
+    "\\GameOn3x",
+    "\\GameOn3x\\GameOn3x",
     "\\gamewithinput",
     "\\gamewithinput\\gamewithinput"
   ],
-  "SelectedNode": "\\1.1 assignment\\1.1 assignment\\1.1 assignment.cpp",
+  "SelectedNode": "\\gamewithinput\\gamewithinput\\gamewithinput.cpp",
   "PreviewInSolutionExplorer": false
 }

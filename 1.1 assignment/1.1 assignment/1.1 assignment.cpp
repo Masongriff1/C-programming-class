@@ -10,17 +10,66 @@
 using namespace std;
 int main() // main function
 {
-	string firstname, lastname;
-	// string lastname;
-	int age;
-	cout << "Please enter your first name: " << endl;
-	cin >> firstname;
-	cout << "Please enter your last name: " << endl;
-	cin >> lastname;
-	cout << "Please enter your age: " << endl;
-	cin >> age;
-	cout << "Your first name is: " << firstname<< " and your last name is: " << lastname << endl;
-	cout << "Your age is: " << age << endl;
+	char choice;
+	do {
+		cout << "Logic" << endl;
+		cout << "Would you like to play again? (y/n)";
+		cin >> choice;
+	} while (choice != 'y' && choice != 'n'); {
+		cout << "Invalid Input, (y,n)";
+		cin >> choice;
+	}
+
+	
+	/*int i = 1;
+	while (i <= 100) {
+		cout << i << endl;
+		i = i + 1;
+	}*/
+
+
+	//int day;
+	//cout << "Please enter a number between 1-7: " << endl;
+	//cin >> day;
+	//switch (day) {
+	//case 1:
+	//	cout << "It's Monday, go to work.";
+	//	break;
+	//case 2:
+	//	cout << "It's Tuesday, go to work.";
+	//	break;
+	//case 3:
+	//	cout << "Wednesday";
+	//	break;
+	//case 4:
+	//	cout << "Thursday";
+	//	break;
+	//case 5:
+	//	cout << "Friday";
+	//	break;
+	//case 6:
+	//	cout << "Saterday";
+	//	break;
+	//case 7:
+	//	cout << "sunday";
+	//	break;
+	//default:
+	//	cout << "Invalid Input";
+
+
+	// }
+
+	//string firstname, lastname;
+	//// string lastname;
+	//int age;
+	//cout << "Please enter your first name: " << endl;
+	//cin >> firstname;
+	//cout << "Please enter your last name: " << endl;
+	//cin >> lastname;
+	//cout << "Please enter your age: " << endl;
+	//cin >> age;
+	//cout << "Your first name is: " << firstname<< " and your last name is: " << lastname << endl;
+	//cout << "Your age is: " << age << endl;
 
 }
 
