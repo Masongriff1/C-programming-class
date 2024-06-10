@@ -10,7 +10,36 @@
 using namespace std;
 int main() // main function
 {
-	char choice;
+	//declare and initialize a string
+	string myString = "Hello, welcome to UAT.";
+
+	cout << "Original string: " << myString << endl;
+
+	cout << "Length of the Original string is: " << myString.size() << endl;
+	
+	
+	string substring = "welcome";
+	int position = myString.find(substring);
+		if (position < myString.size()) {
+			cout << "Substring " << substring << " Found at position " << position << endl;
+	}
+
+		if (myString.empty()) {
+			cout << "The string is empty" << endl;
+		}
+		else {
+			cout << "The string is not empty" << endl;
+		}
+		myString.clear();
+		if (myString.empty()) {
+			cout << "The string is empty" << endl;
+		}
+		else {
+			cout << "The string is not empty" << endl;
+		}
+
+	
+	/*char choice;
 	do {
 		cout << "Logic" << endl;
 		cout << "Would you like to play again? (y/n)";
@@ -18,7 +47,7 @@ int main() // main function
 	} while (choice != 'y' && choice != 'n'); {
 		cout << "Invalid Input, (y,n)";
 		cin >> choice;
-	}
+	}*/
 
 	
 	/*int i = 1;
