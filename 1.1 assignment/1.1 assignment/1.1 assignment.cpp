@@ -8,9 +8,63 @@
 
 #include <iostream>
 using namespace std;
+
+void welcome();
+int addition(int x, int y);
+int subtraction(int x, int y);
+int multiplication(int x, int y);
+double division(double x, double y);
+
+void welcome() {
+	cout << "Welcome to our calculator application." << endl;
+}
+
+int addition(int x, int y) {
+	int result = x + y;
+	cout << "We are going to perform addition." << endl;
+	cout << "The result of addition is " << result << endl;
+	return result;
+}
+int subtraction(int x, int y) {
+	int result = x - y;
+	cout << "We are going to perform subtraction." << endl;
+	cout << "The result of subtraction is " << result << endl;
+	return result;
+}
+int multiplication(int x, int y) {
+	int result = x * y;
+	cout << "We are going to perform multiplication." << endl;
+	cout << "The result of multiplication is " << result << endl;
+	return result;
+}
+double division(double x, double y) {
+	double result = x / y;
+	cout << "We are going to perform division." << endl;
+	cout << "The result of division is " << result << endl;
+	return result;
+}
+
 int main() // main function
 {
-	const int rows = 3;
+	int x, y;
+	double result;
+	welcome();
+	cout << "Please enter the first number: ";
+	cin >> x;
+	cout << "Please enter the second number: ";
+	cin >> y;
+	
+	addition(x, y);
+	
+	subtraction(x, y);
+	
+	multiplication(x, y);
+
+	division(x, y);
+
+	cout << "\nThank you for using our app." << endl;
+	
+	/*const int rows = 3;
 	const int cols = 3;
 	int myArray[rows][cols];
 
@@ -26,7 +80,7 @@ int main() // main function
 		for (int j = 0; j < cols; ++j){
 			cout << myArray[i][j];
 		}
-	}
+	}*/
 	
 	
 	
