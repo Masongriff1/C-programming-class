@@ -7,46 +7,99 @@
 // 05/20/2024
 
 #include <iostream>
+#include <windows.h>
+#include <fstream>
+#include <string>
 using namespace std;
+const string fileName = "example.txt";
+void writeFile();
+void readFile();
 
-void welcome();
-int addition(int x, int y);
-int subtraction(int x, int y);
-int multiplication(int x, int y);
-double division(double x, double y);
-
-void welcome() {
-	cout << "Welcome to our calculator application." << endl;
+void writeFile() {
+	ofstream outFile(fileName);
+	if (outFile.is_open()) {
+		outFile << "This is a test file" << endl;
+		outFile << "Writing some initial text" << endl;
+		outFile.close();
+		outFile << "file written successfully" << endl;
+	}
+	else {
+		cout << "Error oppening file for writing" << endl;
+	}
 }
 
-int addition(int x, int y) {
-	int result = x + y;
-	cout << "We are going to perform addition." << endl;
-	cout << "The result of addition is " << result << endl;
-	return result;
+void readFile() {
+	ifstream inFile(fileName);
+	if (inFile.is_open()) {
+		string Line;
+		cout << "Reading file contents: " << endl;
+		while (getline(inFile, Line)) {
+			cout << Line << endl;
+		}
+		inFile.close();
+		cout << "File read successfully" << endl;
+	}
+	else {
+		cout << "Error opening ";
+	}
 }
-int subtraction(int x, int y) {
-	int result = x - y;
-	cout << "We are going to perform subtraction." << endl;
-	cout << "The result of subtraction is " << result << endl;
-	return result;
-}
-int multiplication(int x, int y) {
-	int result = x * y;
-	cout << "We are going to perform multiplication." << endl;
-	cout << "The result of multiplication is " << result << endl;
-	return result;
-}
-double division(double x, double y) {
-	double result = x / y;
-	cout << "We are going to perform division." << endl;
-	cout << "The result of division is " << result << endl;
-	return result;
-}
+
+//void welcome();
+//int addition(int x, int y);
+//int subtraction(int x, int y);
+//int multiplication(int x, int y);
+//double division(double x, double y);
+//
+//void welcome() {
+//	cout << "Welcome to our calculator application." << endl;
+//}
+//
+//int addition(int x, int y) {
+//	int result = x + y;
+//	cout << "We are going to perform addition." << endl;
+//	cout << "The result of addition is " << result << endl;
+//	return result;
+//}
+//int subtraction(int x, int y) {
+//	int result = x - y;
+//	cout << "We are going to perform subtraction." << endl;
+//	cout << "The result of subtraction is " << result << endl;
+//	return result;
+//}
+//int multiplication(int x, int y) {
+//	int result = x * y;
+//	cout << "We are going to perform multiplication." << endl;
+//	cout << "The result of multiplication is " << result << endl;
+//	return result;
+//}
+//double division(double x, double y) {
+//	double result = x / y;
+//	cout << "We are going to perform division." << endl;
+//	cout << "The result of division is " << result << endl;
+//	return result;
+//}
 
 int main() // main function
 {
-	int x, y;
+	writeFile();
+	readFile();
+	//string line;
+	//ifstream infile("example.txt");
+	//ofstream outfile("output.txt");
+	//if (infile.is_open()) {
+	//	if (outfile.is_open()) {
+	//		while (getline(infile, line)) {
+	//			cout << line << endl;
+	//		}
+	//		infile.close();
+	//		outfile.close();
+	//	}
+	//	else cout << "Unable to open outfile" << endl;
+	//}
+	//else cout << "Unable to open infile";
+
+	/*
+ int x, y;
 	double result;
 	welcome();
 	cout << "Please enter the first number: ";
@@ -62,7 +115,7 @@ int main() // main function
 
 	division(x, y);
 
-	cout << "\nThank you for using our app." << endl;
+	cout << "\nThank you for using our app." << endl;*/
 	
 	/*const int rows = 3;
 	const int cols = 3;
