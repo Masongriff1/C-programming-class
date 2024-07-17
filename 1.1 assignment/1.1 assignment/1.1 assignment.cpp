@@ -10,10 +10,30 @@
 #include <windows.h>
 #include <fstream>
 #include <string>
+#include <vector>
+#include <list>
+#include <algorithm>
 using namespace std;
 const string fileName = "example.txt";
 void writeFile();
 void readFile();
+
+void modifyValue(int& ref) {
+	ref = 42;
+}
+
+void swap(int& x, int& y) {
+	int temp = x;
+	x = y;
+	y = temp;
+}
+int& getElement(int arr[], int index) {
+	return arr[index];
+}
+
+void printConstReference(const int& ref) {
+	cout << "Value: " << endl;
+}
 
 void writeFile() {
 	ofstream outFile(fileName);
@@ -81,8 +101,78 @@ void readFile() {
 
 int main() // main function
 {
-	writeFile();
-	readFile();
+	//using iterators with a vector
+	vector<int> vec = { 10,20,30,40,50 };
+	//declare an iterator for the vector
+	vector<int>::iterator it;
+	//traversing the vector using the iterator
+	cout << "Vector elements: " << endl;
+	for (it = vec.begin(); it != vec.end(); ++it) {
+		cout << *it << " ";
+	}
+	//modifying vector elements using iterator
+	for (it = vec.begin(); it != vec.end(); ++it) {
+		*it += 10; // *it = *it + 10
+	}
+	cout << "\nVector elements after modify: " << endl;
+	for (it = vec.begin(); it != vec.end(); ++it) {
+		cout << *it << " ";
+	}
+	//using reverse iterator with the vector
+	cout << "\nVector elements in reverse: " << endl;
+	vector<int>::reverse_iterator rit;
+	for (rit = vec.rbegin(); rit != vec.rend(); ++rit) {
+		cout << *rit << " ";
+	}
+	// using iterators with lists
+	list<string> strList = { "apple", "banana", "cherry", "blueberry" };
+	//declare iterator for list
+	list<string>::iterator listIt;
+	cout << "\nList elements: " << endl;
+	for (listIt = strList.begin(); listIt != strList.end(); ++listIt) {
+		cout << *listIt << " ";
+	}
+	//modifying list elements using iterator
+	for (listIt = strList.begin(); listIt != strList.end(); ++listIt) {
+		*listIt = "fruit";
+	}
+	//traverse the modified list
+	cout << "\nList elements after Modify: " << endl;
+	for (listIt = strList.begin(); listIt != strList.end(); ++listIt) {
+		cout << *listIt << " ";
+	}
+
+
+	//int x = 10;
+	//int y = 20;
+
+	//int& refX = x;
+
+	//cout << "Initial values: " << x << " Y= " << y << " refX= " << refX << endl;
+
+	//refX = 15;
+	//cout << "Initial values: " << x << " Y= " << y << " refX= " << refX << endl;
+
+	//modifyValue(x);
+	//cout << "After calling modifyValue(x): " << endl;
+	//cout << "x= " << x << endl;
+
+	//swap(x, y);
+	//cout << "After swapping: " << endl;
+	//cout << "x= " << x << " y= " << y << endl;
+	//int arr[5] = { 1, 2, 3, 4, 5 };
+	//int& refElement = getElement(arr, 2);
+	//cout << "Initial value of arr[2]: " << refElement << endl;
+	//refElement = 99;
+	//cout << "Modified value of arr[2]: " << refElement << endl;
+	//cout << "Array elements are: " << endl;
+	//for (int i = 0; i < 5; ++i) {
+	//	cout << arr[i] << " ";
+	//}
+
+
+		/*writeFile();
+	readFile();*/
 	//string line;
 	//ifstream infile("example.txt");
 	//ofstream outfile("output.txt");
