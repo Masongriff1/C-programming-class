@@ -18,10 +18,15 @@ const string fileName = "example.txt";
 void writeFile();
 void readFile();
 
+// function that takes a pointer to an integer as an argument
+void modifyValue(int* ptr) {
+	//Modify the value pointer to by the pointer
+	*ptr = 100;
+}
+
 void modifyValue(int& ref) {
 	ref = 42;
 }
-
 void swap(int& x, int& y) {
 	int temp = x;
 	x = y;
@@ -30,11 +35,9 @@ void swap(int& x, int& y) {
 int& getElement(int arr[], int index) {
 	return arr[index];
 }
-
 void printConstReference(const int& ref) {
 	cout << "Value: " << endl;
 }
-
 void writeFile() {
 	ofstream outFile(fileName);
 	if (outFile.is_open()) {
@@ -47,7 +50,6 @@ void writeFile() {
 		cout << "Error oppening file for writing" << endl;
 	}
 }
-
 void readFile() {
 	ifstream inFile(fileName);
 	if (inFile.is_open()) {
@@ -63,7 +65,6 @@ void readFile() {
 		cout << "Error opening ";
 	}
 }
-
 //void welcome();
 //int addition(int x, int y);
 //int subtraction(int x, int y);
@@ -101,46 +102,114 @@ void readFile() {
 
 int main() // main function
 {
-	//using iterators with a vector
-	vector<int> vec = { 10,20,30,40,50 };
-	//declare an iterator for the vector
-	vector<int>::iterator it;
-	//traversing the vector using the iterator
-	cout << "Vector elements: " << endl;
-	for (it = vec.begin(); it != vec.end(); ++it) {
-		cout << *it << " ";
-	}
-	//modifying vector elements using iterator
-	for (it = vec.begin(); it != vec.end(); ++it) {
-		*it += 10; // *it = *it + 10
-	}
-	cout << "\nVector elements after modify: " << endl;
-	for (it = vec.begin(); it != vec.end(); ++it) {
-		cout << *it << " ";
-	}
-	//using reverse iterator with the vector
-	cout << "\nVector elements in reverse: " << endl;
-	vector<int>::reverse_iterator rit;
-	for (rit = vec.rbegin(); rit != vec.rend(); ++rit) {
-		cout << *rit << " ";
-	}
-	// using iterators with lists
-	list<string> strList = { "apple", "banana", "cherry", "blueberry" };
-	//declare iterator for list
-	list<string>::iterator listIt;
-	cout << "\nList elements: " << endl;
-	for (listIt = strList.begin(); listIt != strList.end(); ++listIt) {
-		cout << *listIt << " ";
-	}
-	//modifying list elements using iterator
-	for (listIt = strList.begin(); listIt != strList.end(); ++listIt) {
-		*listIt = "fruit";
-	}
-	//traverse the modified list
-	cout << "\nList elements after Modify: " << endl;
-	for (listIt = strList.begin(); listIt != strList.end(); ++listIt) {
-		cout << *listIt << " ";
-	}
+	int score = 7;
+	cout << "initial value of score is: " << score << endl;
+	// pass a pointer to the variable to the function
+	modifyValue(&score);
+	//pritn the value fo variable score after the function call
+	cout << "\nMy score after modification is: " << score << endl;
+
+
+	//int arr[5] = { 10, 20, 30, 40, 50 };
+	////declare a pointer to an integer
+	//int* ptr;
+	////assigning the address of first element of the array to the pointer
+	//ptr = arr; // = ptr = &arr[0]
+	////print all array elements
+	//cout << "Array elements using pointer: " << endl;
+	//for (int i = 0; i < 5; ++i) {
+	//	cout << *(ptr + i) << " ";
+	//}
+	//// modify all array elements using poitner
+	//for (int i = 0; i < 5; ++i) {
+	//	*(ptr + i) += 10; //alias to *(ptr + i) = *(ptr + i) + 10
+	//}
+	//cout << "\nModified Array elements are: " << endl;
+	//for (int i = 0; i < 5; ++i) {
+	//	cout << *(ptr + i) << " ";
+	//}
+
+	//int num = 10; // declare an integer veriable
+	//int* ptr; // declare a pointer to an int
+	//ptr = &num; // assign the address of the integer to the pointer
+	//// int*ptr == &num;
+	//cout << "Value of num: " << num << endl;
+	//cout << "Address of num: " << &num << endl;
+	//cout << "Value stored in ptr (Address of num): " << ptr << endl;
+	//cout << "Value pointed to by ptr: " << *ptr << endl;
+	////num = 1000; one way to update variable num
+	//// the second way
+	//*ptr = 1000;
+	//cout << "New value of the num after modification: " << num << endl;
+
+
+	//vector<int> vic; // a vector if datatype int
+	//// adding elements to a vector of int
+	//vic.push_back(10);
+	//vic.push_back(20);
+	//vic.push_back(30);
+	//vic.push_back(40);
+	//vic.push_back(50);
+	//// print the victor elements
+	//cout << "Vector elements after the addition: " << endl;
+	//for (int i = 0; i < vic.size(); ++i) {
+	//	cout << vic[i] << " ";
+	//}
+	//// delete an element from the vector
+	//for (int i = 0; i < vic.size(); ++i) {
+	//	if (vic[i] == 30) {
+	//		vic.erase(vic.begin() + i);
+	//		break;
+	//	}
+	//}
+	////print the vector elements after deletion
+	//cout << "\nVector elements after the deletion: " << endl;
+	//for (int i = 0; i < vic.size(); ++i) {
+	//	cout << vic[i] << " ";
+	//}
+
+
+
+	////using iterators with a vector
+	//vector<int> vec = { 10,20,30,40,50 };
+	////declare an iterator for the vector
+	//vector<int>::iterator it;
+	////traversing the vector using the iterator
+	//cout << "Vector elements: " << endl;
+	//for (it = vec.begin(); it != vec.end(); ++it) {
+	//	cout << *it << " ";
+	//}
+	////modifying vector elements using iterator
+	//for (it = vec.begin(); it != vec.end(); ++it) {
+	//	*it += 10; // *it = *it + 10
+	//}
+	//cout << "\nVector elements after modify: " << endl;
+	//for (it = vec.begin(); it != vec.end(); ++it) {
+	//	cout << *it << " ";
+	//}
+	////using reverse iterator with the vector
+	//cout << "\nVector elements in reverse: " << endl;
+	//vector<int>::reverse_iterator rit;
+	//for (rit = vec.rbegin(); rit != vec.rend(); ++rit) {
+	//	cout << *rit << " ";
+	//}
+	//// using iterators with lists
+	//list<string> strList = { "apple", "banana", "cherry", "blueberry" };
+	////declare iterator for list
+	//list<string>::iterator listIt;
+	//cout << "\nList elements: " << endl;
+	//for (listIt = strList.begin(); listIt != strList.end(); ++listIt) {
+	//	cout << *listIt << " ";
+	//}
+	////modifying list elements using iterator
+	//for (listIt = strList.begin(); listIt != strList.end(); ++listIt) {
+	//	*listIt = "fruit";
+	//}
+	////traverse the modified list
+	//cout << "\nList elements after Modify: " << endl;
+	//for (listIt = strList.begin(); listIt != strList.end(); ++listIt) {
+	//	cout << *listIt << " ";
+	//}
 
 
 	//int x = 10;
