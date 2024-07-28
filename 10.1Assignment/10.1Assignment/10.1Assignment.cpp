@@ -5,40 +5,29 @@
 #include <fstream>
 using namespace std;
 
+int crimeAccount = 357698;
+int coffeeAccount = 50;
 
-
-
-void normTransfer(int& moneyMoving, int& crimeRef) {
-	int crimeAccount = crimeRef + moneyMoving;
+void originBalance(int crimeAccount, int coffeeAccount) {
+	cout << "The amount that the criminals have originally: " << crimeAccount << endl;
+	cout << "The amount that the coffee shop has originally: " << coffeeAccount << endl;
 }
-void swap(int& crimeAccount, int& ciaAccount) {
+void afterBalance(int crimeAccount, int coffeeAccount) {
+	cout << "The amount that the criminals have AFTER the swap: " << crimeAccount << endl;
+	cout << "The amount that the coffee shop has AFTER the swap: " << coffeeAccount << endl;
+}
+void swap(int& crimeAccount, int& coffeeAccount) {
 	int temp = crimeAccount;
-	crimeAccount = ciaAccount;
-	ciaAccount = temp;
+	crimeAccount = coffeeAccount;
+	coffeeAccount = temp;
+	cout << "THE SWAP HAS BEEN MADE" << endl;
 }
-
 
 int main()
 {
-	int ciaAccount = 0;
-	int crimeAccount = 30;
-	int moneyMoving = 526;
-	int& crimeRef = crimeAccount;
-	crimeRef = crimeAccount;
-	cout << "Criminal account originally: " << crimeAccount << " ";
-	cout << "+ " << moneyMoving << " ";
-	normTransfer(moneyMoving, crimeRef);
-	cout << "= " << crimeRef << endl;
+	originBalance(crimeAccount, coffeeAccount); // The Initial Value of both balances BEFORE the swap
 
+	swap(crimeAccount, coffeeAccount); // the swap of the two accounts
+
+	afterBalance(crimeAccount, coffeeAccount); // The initial value of the coffee shop's balance AFTER the swap
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
