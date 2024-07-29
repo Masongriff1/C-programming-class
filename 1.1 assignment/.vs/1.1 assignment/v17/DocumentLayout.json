@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{496FC8FB-CFD6-40D7-93D4-3C75358C6E22}|1.1 assignment\\1.1 assignment.vcxproj|C:\\Users\\Mason\\Documents\\C-programming-class\\1.1 assignment\\1.1 assignment\\1.1 assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{496FC8FB-CFD6-40D7-93D4-3C75358C6E22}|1.1 assignment\\1.1 assignment.vcxproj|solutionrelative:1.1 assignment\\1.1 assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{496FC8FB-CFD6-40D7-93D4-3C75358C6E22}|1.1 assignment\\1.1 assignment.vcxproj|C:\\Users\\Mason\\Documents\\C-programming-class\\1.1 assignment\\1.1 assignment\\1.1 assignment.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{496FC8FB-CFD6-40D7-93D4-3C75358C6E22}|1.1 assignment\\1.1 assignment.vcxproj|solutionrelative:1.1 assignment\\1.1 assignment.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,9 +28,22 @@
               "RelativeDocumentMoniker": "1.1 assignment\\1.1 assignment.cpp",
               "ToolTip": "C:\\Users\\Mason\\Documents\\C-programming-class\\1.1 assignment\\1.1 assignment\\1.1 assignment.cpp",
               "RelativeToolTip": "1.1 assignment\\1.1 assignment.cpp",
-              "ViewState": "AQIAACAAAAAAAAAAAAAAAKwAAAAFAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAAGsAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-15T17:43:07.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "1.1 assignment.h",
+              "DocumentMoniker": "C:\\Users\\Mason\\Documents\\C-programming-class\\1.1 assignment\\1.1 assignment\\1.1 assignment.h",
+              "RelativeDocumentMoniker": "1.1 assignment\\1.1 assignment.h",
+              "ToolTip": "C:\\Users\\Mason\\Documents\\C-programming-class\\1.1 assignment\\1.1 assignment\\1.1 assignment.h",
+              "RelativeToolTip": "1.1 assignment\\1.1 assignment.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-29T17:59:04.328Z",
               "EditorCaption": ""
             }
           ]

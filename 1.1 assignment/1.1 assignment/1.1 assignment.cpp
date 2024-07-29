@@ -13,101 +13,112 @@
 #include <vector>
 #include <list>
 #include <algorithm>
+#include "1.1 assignment.h"
 using namespace std;
-const string fileName = "example.txt";
-void writeFile();
-void readFile();
 
-// function that takes a pointer to an integer as an argument
-void modifyValue(int* ptr) {
-	//Modify the value pointer to by the pointer
-	*ptr = 100;
-}
-
-void modifyValue(int& ref) {
-	ref = 42;
-}
-void swap(int& x, int& y) {
-	int temp = x;
-	x = y;
-	y = temp;
-}
-int& getElement(int arr[], int index) {
-	return arr[index];
-}
-void printConstReference(const int& ref) {
-	cout << "Value: " << endl;
-}
-void writeFile() {
-	ofstream outFile(fileName);
-	if (outFile.is_open()) {
-		outFile << "This is a test file" << endl;
-		outFile << "Writing some initial text" << endl;
-		outFile.close();
-		outFile << "file written successfully" << endl;
-	}
-	else {
-		cout << "Error oppening file for writing" << endl;
-	}
-}
-void readFile() {
-	ifstream inFile(fileName);
-	if (inFile.is_open()) {
-		string Line;
-		cout << "Reading file contents: " << endl;
-		while (getline(inFile, Line)) {
-			cout << Line << endl;
-		}
-		inFile.close();
-		cout << "File read successfully" << endl;
-	}
-	else {
-		cout << "Error opening ";
-	}
-}
-//void welcome();
-//int addition(int x, int y);
-//int subtraction(int x, int y);
-//int multiplication(int x, int y);
-//double division(double x, double y);
+//const string fileName = "example.txt";
+//void writeFile();
+//void readFile();
 //
-//void welcome() {
-//	cout << "Welcome to our calculator application." << endl;
+//// function that takes a pointer to an integer as an argument
+//void modifyValue(int* ptr) {
+//	//Modify the value pointer to by the pointer
+//	*ptr = 100;
 //}
 //
-//int addition(int x, int y) {
-//	int result = x + y;
-//	cout << "We are going to perform addition." << endl;
-//	cout << "The result of addition is " << result << endl;
-//	return result;
+//void modifyValue(int& ref) {
+//	ref = 42;
 //}
-//int subtraction(int x, int y) {
-//	int result = x - y;
-//	cout << "We are going to perform subtraction." << endl;
-//	cout << "The result of subtraction is " << result << endl;
-//	return result;
+//void swap(int& x, int& y) {
+//	int temp = x;
+//	x = y;
+//	y = temp;
 //}
-//int multiplication(int x, int y) {
-//	int result = x * y;
-//	cout << "We are going to perform multiplication." << endl;
-//	cout << "The result of multiplication is " << result << endl;
-//	return result;
+//int& getElement(int arr[], int index) {
+//	return arr[index];
 //}
-//double division(double x, double y) {
-//	double result = x / y;
-//	cout << "We are going to perform division." << endl;
-//	cout << "The result of division is " << result << endl;
-//	return result;
+//void printConstReference(const int& ref) {
+//	cout << "Value: " << endl;
 //}
+//void writeFile() {
+//	ofstream outFile(fileName);
+//	if (outFile.is_open()) {
+//		outFile << "This is a test file" << endl;
+//		outFile << "Writing some initial text" << endl;
+//		outFile.close();
+//		outFile << "file written successfully" << endl;
+//	}
+//	else {
+//		cout << "Error oppening file for writing" << endl;
+//	}
+//}
+//void readFile() {
+//	ifstream inFile(fileName);
+//	if (inFile.is_open()) {
+//		string Line;
+//		cout << "Reading file contents: " << endl;
+//		while (getline(inFile, Line)) {
+//			cout << Line << endl;
+//		}
+//		inFile.close();
+//		cout << "File read successfully" << endl;
+//	}
+//	else {
+//		cout << "Error opening ";
+//	}
+//}
+////void welcome();
+////int addition(int x, int y);
+////int subtraction(int x, int y);
+////int multiplication(int x, int y);
+////double division(double x, double y);
+////
+////void welcome() {
+////	cout << "Welcome to our calculator application." << endl;
+////}
+////
+////int addition(int x, int y) {
+////	int result = x + y;
+////	cout << "We are going to perform addition." << endl;
+////	cout << "The result of addition is " << result << endl;
+////	return result;
+////}
+////int subtraction(int x, int y) {
+////	int result = x - y;
+////	cout << "We are going to perform subtraction." << endl;
+////	cout << "The result of subtraction is " << result << endl;
+////	return result;
+////}
+////int multiplication(int x, int y) {
+////	int result = x * y;
+////	cout << "We are going to perform multiplication." << endl;
+////	cout << "The result of multiplication is " << result << endl;
+////	return result;
+////}
+////double division(double x, double y) {
+////	double result = x / y;
+////	cout << "We are going to perform division." << endl;
+////	cout << "The result of division is " << result << endl;
+////	return result;
+////}
 
 int main() // main function
 {
-	int score = 7;
-	cout << "initial value of score is: " << score << endl;
-	// pass a pointer to the variable to the function
-	modifyValue(&score);
-	//pritn the value fo variable score after the function call
-	cout << "\nMy score after modification is: " << score << endl;
+	int x = 5, y = 10;
+	cout << "Initial values - x: " << x << " Initial value - y: " << y << endl;
+	
+	swapWithPointers(&x, &y);
+	cout << "After swap with pointers, value - x: " << x << " Value - y: " << y << endl;
+
+	swapWithReferences(x, y);
+	cout << "After swap with references, value - x: " << x << " Value - y: " << y << endl;
+	
+	//int score = 7;
+	//cout << "initial value of score is: " << score << endl;
+	//// pass a pointer to the variable to the function
+	//modifyValue(&score);
+	////pritn the value fo variable score after the function call
+	//cout << "\nMy score after modification is: " << score << endl;
 
 
 	//int arr[5] = { 10, 20, 30, 40, 50 };
