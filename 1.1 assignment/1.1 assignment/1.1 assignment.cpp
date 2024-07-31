@@ -15,6 +15,19 @@
 #include <algorithm>
 #include "1.1 assignment.h"
 using namespace std;
+struct Student {
+	string name;
+	int age;
+	int studentId;
+	float gpa;
+	void display() {
+		cout << "Name: " << name << endl;
+		cout << "Age: " << age << endl;
+		cout << "Student ID: " << studentId << endl;
+		cout << "GPA: " << gpa << endl;
+	}
+};
+
 
 //const string fileName = "example.txt";
 //void writeFile();
@@ -104,15 +117,48 @@ using namespace std;
 
 int main() // main function
 {
-	int x = 5, y = 10;
-	cout << "Initial values - x: " << x << " Initial value - y: " << y << endl;
-	
-	swapWithPointers(&x, &y);
-	cout << "After swap with pointers, value - x: " << x << " Value - y: " << y << endl;
+	// create an instance of the struct
+	Student student1;
+	// assign values to struct member
+	student1.name = "Alice";
+	student1.age = 20;
+	student1.studentId = 12345;
+	student1.gpa = 3.7;
 
-	swapWithReferences(x, y);
-	cout << "After swap with references, value - x: " << x << " Value - y: " << y << endl;
-	
+	// access and display the struct member
+	cout << "Student 1 information: " << endl;
+	student1.display();
+
+
+	Student student2 = { "Mike", 22, 2345, 2.55 };
+	// access and display the struct member
+	cout << "Student 2 information: " << endl;
+	student2.display();
+
+	// Modify a struct member
+	student1.age = 21;
+	student1.gpa = 4.0;
+	cout << "\n\nStudent 1 information after update: " << endl;
+	student1.display();
+
+	//int a = 5, b = 10;
+	//cout << "Initial values - a: " << a << " - b: " << b << endl;
+	//// call the values
+	//int sum = add(a, b);
+	//cout << "Sum: " << sum << endl;
+	//int product = multiply(a, b);
+	//cout << "Product: " << product << endl;
+
+
+	//int x = 5, y = 10;
+	//cout << "Initial values - x: " << x << " Initial value - y: " << y << endl;
+	//
+	//swapWithPointers(&x, &y);
+	//cout << "After swap with pointers, value - x: " << x << " Value - y: " << y << endl;
+
+	//swapWithReferences(x, y);
+	//cout << "After swap with references, value - x: " << x << " Value - y: " << y << endl;
+	//
 	//int score = 7;
 	//cout << "initial value of score is: " << score << endl;
 	//// pass a pointer to the variable to the function
