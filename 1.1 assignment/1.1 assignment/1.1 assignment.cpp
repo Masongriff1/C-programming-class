@@ -15,18 +15,94 @@
 #include <algorithm>
 #include "1.1 assignment.h"
 using namespace std;
-struct Student {
+class Animal { //1- class name
+	//2- attributes: things i can see
+private:
 	string name;
 	int age;
-	int studentId;
-	float gpa;
-	void display() {
-		cout << "Name: " << name << endl;
-		cout << "Age: " << age << endl;
-		cout << "Student ID: " << studentId << endl;
-		cout << "GPA: " << gpa << endl;
+
+public:
+	/*Animal(string name, int age) {
+		this->name = name;
+		this->age = age;
+	}*/
+	// a shorter way to write constructor
+	Animal(string name, int age) : name(name), age(age) {};
+	//Getters and Setters
+	string getName() {
+		cout << name << endl;
+		return name;
 	}
+	void setName(string name) {
+		name = name;
+	}
+	int getAge() {
+		cout << age << endl;
+		return age;
+	}
+	void setAge(int age) {
+		age = age;
+	}
+	//methods
+	void makeSound() {
+		cout << "Most animals make sound!" << endl;
+	}
+
+	//int IdNumber;
+	//Human() {//constructor: special function will be executed when i create instances
+	//		 // (objects) from the class
+	//	// c++ will create a basic constructor for you
+
+	//}
+	//Human(string name, int age, int IdNumber) {
+	//	this->name = name;
+	//	this->age = age;
+	//	this->IdNumber = IdNumber;
+	//}
+
+	////3- methods (functions): what objects can do for me
+	//void breath() {
+	//	cout << "Breath" << endl;
+	//}
+	//void eat() {
+	//	cout << "Eat" << endl;
+	//}
+	//void walk() {
+	//	cout << "Walk" << endl;
+	//}
+
 };
+
+//derived class (child class)
+class Dog : public Animal {
+private:
+	string breed;
+// constructor
+public:
+	Dog(string name, int age, string breed) : Animal(name, age), breed(breed){}
+	//I still need getter and setter for breed
+	void setBreed(string breed) {
+		breed = breed;
+	}
+	string getBreed() {
+		cout << breed << endl;
+		return breed;
+	}
+
+};
+
+//struct Student {
+//	string name;
+//	int age;
+//	int studentId;
+//	float gpa;
+//	void display() {
+//		cout << "Name: " << name << endl;
+//		cout << "Age: " << age << endl;
+//		cout << "Student ID: " << studentId << endl;
+//		cout << "GPA: " << gpa << endl;
+//	}
+//};
 
 
 //const string fileName = "example.txt";
@@ -117,29 +193,38 @@ struct Student {
 
 int main() // main function
 {
-	// create an instance of the struct
-	Student student1;
-	// assign values to struct member
-	student1.name = "Alice";
-	student1.age = 20;
-	student1.studentId = 12345;
-	student1.gpa = 3.7;
-
-	// access and display the struct member
-	cout << "Student 1 information: " << endl;
-	student1.display();
+	Animal animal1("Animal1", 6);
 
 
-	Student student2 = { "Mike", 22, 2345, 2.55 };
-	// access and display the struct member
-	cout << "Student 2 information: " << endl;
-	student2.display();
+	//Human human1("Mike", 20, 123);
+	//human1.breath();
+	//human1.eat();
+	//human1.walk();
 
-	// Modify a struct member
-	student1.age = 21;
-	student1.gpa = 4.0;
-	cout << "\n\nStudent 1 information after update: " << endl;
-	student1.display();
+
+	//// create an instance of the struct
+	//Student student1;
+	//// assign values to struct member
+	//student1.name = "Alice";
+	//student1.age = 20;
+	//student1.studentId = 12345;
+	//student1.gpa = 3.7;
+
+	//// access and display the struct member
+	//cout << "Student 1 information: " << endl;
+	//student1.display();
+
+
+	//Student student2 = { "Mike", 22, 2345, 2.55 };
+	//// access and display the struct member
+	//cout << "Student 2 information: " << endl;
+	//student2.display();
+
+	//// Modify a struct member
+	//student1.age = 21;
+	//student1.gpa = 4.0;
+	//cout << "\n\nStudent 1 information after update: " << endl;
+	//student1.display();
 
 	//int a = 5, b = 10;
 	//cout << "Initial values - a: " << a << " - b: " << b << endl;
